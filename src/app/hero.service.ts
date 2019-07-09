@@ -69,7 +69,7 @@ export class HeroService {
   /** POST: add a new hero to the server */
   addHero (hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
-      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
+      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}, raiting hero w/ rating=${newHero.rating}`)),
       catchError(this.handleError<Hero>('addHero'))
     );
   }
@@ -88,7 +88,7 @@ export class HeroService {
   /** PUT: update the hero on the server */
   updateHero (hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
-      tap(_ => this.log(`updated hero id=${hero.id}`)),
+      tap(_ => this.log(`updated hero id=${hero.id},  hero rating=${hero.rating}`)),
       catchError(this.handleError<any>('updateHero'))
     );
   }

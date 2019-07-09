@@ -27,8 +27,8 @@ button:disabled {
   background-color: #eee;
   color: #ccc;
   cursor: auto;
-}
-
+} 
+.raiting a:hover {color:red;}
 
 /*
 Copyright Google LLC. All Rights Reserved.
